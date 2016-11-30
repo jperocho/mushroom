@@ -7,6 +7,7 @@ var app = express();
 
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost/mushapi');
+var mongodb = mongoose.connection.db;
 
 var Endpoint = require('./models/endpoint');
 
@@ -23,6 +24,16 @@ ep.then( (result) => {
 })
 .catch( (err) => console.log(err) )
 
+app.get('/api/v2/:endpoint',(req,res) => {
+	mongodb.collection(req.params.endpoint).find({}).toArray(function(err,endpoint) {
+		if (err)
+			console.log(err);
+
+		res.json(endpoint);
+	})
+
+})
+
 
 app.get('/', (req,res) => {
 	Endpoint.findOne({})
@@ -32,19 +43,14 @@ app.get('/', (req,res) => {
 		.catch( e => console.log(e) );
 })
 
-app.post('/', (req,res) => {
-	var endpoint = new Endpoint({
-		name: 'test',
-		url: '/test',
+app.post('/endpoint', (req,res) => {
+	mongodb.collection('testing').insert({
+		name: 'testing',
+		url: '/testing',
 		fields: [
 			{name: 'String'}
 		]
 	})
-
-	endpoint.save((err,data) => {
-		if (err) console.log();
-		res.json(data);
-	});
 })
 
 
