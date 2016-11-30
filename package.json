@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/jperocho/mushroom#readme",
   "dependencies": {
-    "mongoose": "^4.7.0"
+    "mongoose": "^4.7.0",
+    "passport": "^0.3.2"
   }
 }
