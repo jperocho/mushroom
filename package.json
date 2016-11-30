@@ -1,0 +1,26 @@
+{
+  "name": "mushroom",
+  "version": "0.0.1",
+  "description": "Dynamic API Builder",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jperocho/mushroom.git"
+  },
+  "keywords": [
+    "mushroom",
+    "api",
+    "rest",
+    "resful"
+  ],
+  "author": "John Mark A. Perocho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jperocho/mushroom/issues"
+  },
+  "homepage": "https://github.com/jperocho/mushroom#readme"
+}
