@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/jperocho/mushroom#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "connect-flash": "^0.1.1",

@@ -9,6 +9,7 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var MongoStore   = require('connect-mongo')(session);
 var multer       = require('multer');
+var passport     = require('passport');
 
 var db           = require('./db');
 
@@ -56,6 +57,7 @@ app.use(express.static('public'));
 /*
  * Routes
  */
+require('./passport-config')(app)
 
 app.get('/api/v2/:endpoint',(req,res) => {
 	db.getEndpoint(req.params.endpoint).find({}).toArray( (err,endpoint) => {
