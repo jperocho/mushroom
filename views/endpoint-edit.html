@@ -3,17 +3,17 @@
 	<form id="newEndpoint" method="POST" action="/" enctype="multipart/form-data">
 		<input type="hidden" name="_csrf" value="{{csrfToken}}">
 		<label> Title
-			<input name="title" type="text" >
+			<input name="title" type="text" value="{{data.title}}">
 		</label>
 		<br/>
 		<label> Resource Url
-			<input name="slug" type="text" >
+			<input name="slug" type="text" value="{{data.slug}}">
 		</label>
 		<br/>
 		<h4>Fields</h4>
 
 		<div id="fields">
-			<div class="field">
+			<div class="field" data-id="1">
 				<label> Name
 					<input name="fieldName" type="text" >
 				</label>

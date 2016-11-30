@@ -52,6 +52,7 @@ var Endpoint = require('./models/endpoint');
 
 app.engine('.html', hbs.engine);
 app.set('view engine', '.html');
+
 app.use(express.static('public'));
 
 /*

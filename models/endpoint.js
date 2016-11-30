@@ -6,8 +6,8 @@ var IdCounter = require('./id-counter');
 
 var endpointSchema = new Schema({
 	id: {type: String},
-	name: {type: String},
-	url: {type: String},
+	title: {type: String},
+	slug: {type: String},
 	fields: [Schema.Types.Mixed]
 }, {strict: false});
 
