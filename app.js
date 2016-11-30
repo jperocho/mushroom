@@ -1,5 +1,5 @@
 /*
- * Modules
+ * 3rd Party Modules
  */
 'use strict';
 var express      = require('express');
@@ -11,12 +11,12 @@ var MongoStore   = require('connect-mongo')(session);
 var multer       = require('multer');
 var passport     = require('passport');
 
-var db           = require('./db');
-
 /*
- * configuration file
+ * Custom Modules
  */
+var db           = require('./db');
 var conf         = require('./config');
+var fetchFiles   = require('./helpers').fetchFiles;
 
 
 /*
@@ -59,37 +59,44 @@ app.use(express.static('public'));
  */
 require('./passport-config')(app)
 
-app.get('/api/v2/:endpoint',(req,res) => {
-	db.getEndpoint(req.params.endpoint).find({}).toArray( (err,endpoint) => {
-				if (err)
-					console.log(err);
-
-				res.json(endpoint);
-			})
+// Admin Route
+var adminRoute = require('./admin');
+fetchFiles(__dirname + '/admin/', function(name){
+    app.use('/', adminRoute[name]);
 })
 
-app.get('/', (req,res) => {
-	res.render('index')
-})
 
-app.get('/login', (req,res) => {
-	res.render('login');
-})
+// app.get('/api/v2/:endpoint',(req,res) => {
+// 	db.getEndpoint(req.params.endpoint).find({}).toArray( (err,endpoint) => {
+// 				if (err)
+// 					console.log(err);
 
-app.post('/login', (req,res) => {
-	console.log(req.body);
-})
+// 				res.json(endpoint);
+// 			})
+// })
 
-app.post('/endpoint', (req,res) => {
-	db.mongoDb.collection('profile-info').insert({
-		name: 'profile-info',
-		url: '/profile-info',
-		fields: [
-			{name: 'String'},
-			{address: 'String'}
-		]
-	})
-})
+// app.get('/', (req,res) => {
+// 	res.render('index')
+// })
+
+// app.get('/login', (req,res) => {
+// 	res.render('login');
+// })
+
+// app.post('/login', (req,res) => {
+// 	console.log(req.body);
+// })
+
+// app.post('/endpoint', (req,res) => {
+// 	db.mongoDb.collection('profile-info').insert({
+// 		name: 'profile-info',
+// 		url: '/profile-info',
+// 		fields: [
+// 			{name: 'String'},
+// 			{address: 'String'}
+// 		]
+// 	})
+// })
 
 // 404 Page Not Found
 app.use( (req, res, next) => {
