@@ -1,6 +1,6 @@
 {
   "name": "mushroom",
-  "description": "Dynamic API Builder",
+  "description": "Dynamic Restful API Builder",
   "main": "app.js",
   "authors": [
     "John Mark A. Perocho"
