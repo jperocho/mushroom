@@ -39,3 +39,4 @@ Thumbs.db
 # MUSHROOM ignore files #
 #########################
 node_modules/
+public/vendor_components/
