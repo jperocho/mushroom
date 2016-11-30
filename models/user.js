@@ -53,4 +53,5 @@ function seedUser(email,username,password) {
 
     });
 }
+
 module.exports = User;
