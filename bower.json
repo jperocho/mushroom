@@ -12,5 +12,8 @@
     "rest",
     "resful"
   ],
-  "homepage": "https://github.com/jperocho/mushroom"
+  "homepage": "https://github.com/jperocho/mushroom",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
 }
