@@ -44,11 +44,12 @@ app.get('/', (req,res) => {
 })
 
 app.post('/endpoint', (req,res) => {
-	mongodb.collection('testing').insert({
-		name: 'testing',
-		url: '/testing',
+	mongodb.collection('profile-info').insert({
+		name: 'profile-info',
+		url: '/profile-info',
 		fields: [
-			{name: 'String'}
+			{name: 'String'},
+			{address: 'String'}
 		]
 	})
 })
