@@ -1,0 +1,16 @@
+{
+  "name": "mushroom",
+  "description": "Dynamic API Builder",
+  "main": "app.js",
+  "authors": [
+    "John Mark A. Perocho"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "mushroom",
+    "api",
+    "rest",
+    "resful"
+  ],
+  "homepage": "https://github.com/jperocho/mushroom"
+}
