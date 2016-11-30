@@ -2,26 +2,26 @@
  * Modules
  */
 'use strict';
-var express = require('express');
-var exphbs = require('express-handlebars');
-var cookieParser   = require('cookie-parser');
-var bodyParser     = require('body-parser');
-var session        = require('express-session');
-var MongoStore     = require('connect-mongo')(session);
-var multer         = require('multer');
+var express      = require('express');
+var exphbs       = require('express-handlebars');
+var cookieParser = require('cookie-parser');
+var bodyParser   = require('body-parser');
+var session      = require('express-session');
+var MongoStore   = require('connect-mongo')(session);
+var multer       = require('multer');
 
-var db = require('./db');
+var db           = require('./db');
 
 /*
  * configuration file
  */
-var conf = require('./config');
+var conf         = require('./config');
 
 
 /*
  * Initialize
  */
-var app = express();
+var app          = express();
 
 db.init();
 
@@ -30,12 +30,19 @@ app.use(bodyParser.json()); // get information request in json format
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var hbs = exphbs.create({
-        defaultLayout: 'main',
-        extname: '.html',
-        partialsDir: [
-            'views/partials/',
-        ]
-    })
+  defaultLayout: 'main',
+  extname: '.html',
+  partialsDir: [
+      'views/partials/',
+  ]
+})
+
+app.use(session({
+  secret: conf.sessionSecret,
+  store: new MongoStore({ url: conf.db }),
+  resave: true,
+  saveUninitialized: true
+}))
 
 /*
  * Models

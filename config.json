@@ -16,6 +16,6 @@
 	},
 
 	"db" : "mongodb://localhost/mushapi",
-	"sessionSecret" : "TB9kMo8NSwcUfD6AXpdJ9ZqDmJiEioW9qKM8T2ZTy8yYHDhXsM",
+	"sessionSecret" : "@0g}iKFT*xUt1G;ETdj=L5,:(U;mA13 `a3s=0|} jt=zgUpMRo`0?SoB#CIry-o')",
 	"port": 3000
 }
