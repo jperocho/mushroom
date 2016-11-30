@@ -1,0 +1,21 @@
+{
+	"messages" : {
+
+		"404" : {
+			"status": 404,
+			"title": "Sorry, this page isn't available",
+			"description": "The link you followed may be broken, or the page may have been removed."
+		},
+
+		"500" : {
+			"status": 500,
+			"title": "Sorry, There was a server error.",
+			"description": "Contact your system administrator."
+		}
+
+	},
+
+	"db" : "mongodb://localhost/mushapi",
+	"sessionSecret" : "TB9kMo8NSwcUfD6AXpdJ9ZqDmJiEioW9qKM8T2ZTy8yYHDhXsM",
+	"port": 3000
+}

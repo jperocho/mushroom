@@ -1,0 +1,14 @@
+<div class="center-middle-wrapper">
+	<div class="center-middle login">
+		<p class="lt">Mushroom Restfull API Builder</p>
+		{{#if message}}
+		<div class="error">{{message}}</div>
+		{{/if}}
+		<form action="/login" method="post">
+			<input type="hidden" name="_csrf" value="{{csrfToken}}">
+			<input type="text" name="username" placeholder="Username">
+			<input type="password" name="password" placeholder="Password">
+			<button type="submit" class="button expanded small">Login</button>
+		</form>
+	</div>
+</div>
