@@ -66,6 +66,12 @@ fetchFiles(__dirname + '/admin/', function(name){
     app.use('/', adminRoute[name]);
 })
 
+// API Route
+var apiRoute = require('./api-v1');
+fetchFiles(__dirname + '/api-v1/', function(name){
+    app.use('/api/v1/', apiRoute[name]);
+})
+
 
 // app.get('/api/v2/:endpoint',(req,res) => {
 // 	db.getEndpoint(req.params.endpoint).find({}).toArray( (err,endpoint) => {
@@ -102,20 +108,20 @@ fetchFiles(__dirname + '/admin/', function(name){
 // 404 Page Not Found
 app.use( (req, res, next) => {
     var err = new Error('404');
-    err.status = conf.messages['404'].status;
+    err.status = conf.error['404'].status;
     res.status(err.status).render('error',{
-        status: conf.messages['404'].status,
-        title: conf.messages['404'].title,
-        description: conf.messages['404'].description
+        status: conf.error['404'].status,
+        title: conf.error['404'].title,
+        description: conf.error['404'].description
     });
 });
 
 // 500 Page Not Found
 app.use( (err, req, res, next) => {
-    res.status(conf.messages['500'].status).render('error',{
-        status: conf.messages['500'].status,
-        title: conf.messages['500'].title,
-        description: conf.messages['500'].description
+    res.status(conf.error['500'].status).render('error',{
+        status: conf.error['500'].status,
+        title: conf.error['500'].title,
+        description: conf.error['500'].description
     });
 });
 

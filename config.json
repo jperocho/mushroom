@@ -1,15 +1,17 @@
 {
-	"messages" : {
+	"error" : {
 
 		"404" : {
 			"status": 404,
 			"title": "Sorry, this page isn't available",
+			"apiMessage": "Sorry, this resource isn't available",
 			"description": "The link you followed may be broken, or the page may have been removed."
 		},
 
 		"500" : {
 			"status": 500,
 			"title": "Sorry, There was a server error.",
+			"apiMessage": "Sorry, this resource had a server error.",
 			"description": "Contact your system administrator."
 		}
 

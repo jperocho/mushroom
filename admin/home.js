@@ -24,10 +24,22 @@ AdminRoute
 		}
 
 		if (req.body.fieldType.length) {
-			newEndpoint.fields = [];
-			for (var i = req.body.fieldType.length - 1; i >= 0; i--) {
+			if (typeof req.body.fieldType == 'object' ) {
+
+				newEndpoint.fields = [];
+
+				for (var i = req.body.fieldType.length - 1; i >= 0; i--) {
+					var field = {};
+					field[req.body.fieldName[i]] = req.body.fieldType[i];
+					newEndpoint.fields.push(field)
+				}
+
+			} else {
+				newEndpoint.fields = [];
+
 				var field = {};
-				field[req.body.fieldName[i]] = req.body.fieldType[i];
+				field[req.body.fieldName] = req.body.fieldType;
+
 				newEndpoint.fields.push(field)
 			}
 		}

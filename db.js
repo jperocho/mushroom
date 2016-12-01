@@ -14,7 +14,7 @@ module.exports = {
 		mongoose.connect(conf.db);
 	},
 
-	getEndpoint: function(endpoint) {
+	collection: function(endpoint) {
 		return mongoose.connection.db.collection(endpoint)
 	}
 }
