@@ -8,4 +8,3 @@ var http = require('http')
 var conf = require('./config');
 
 http.createServer(app).listen(conf.port)
-// app.listen(conf.port);
