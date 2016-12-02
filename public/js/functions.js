@@ -1,17 +1,17 @@
 'use strict';
 $(function(){
 
+	// Add new resource field
 	$('#addField').on('click',function(e){
 		e.preventDefault();
-		var seq = parseInt($('#fields .field:last').data('id'))
-		var field = $('#fields .field:last').clone()
-		field.attr('data-id',++seq);
+		var field = $('.field:last').clone()
+		field.find('.field-input').val('');
+
 		field.insertAfter('.field:last')
 	})
 
+	// on submit
 	$('#newEndpoint').on('submit',function(e){
-
-		// console.log();
 		$.ajax({
 		  type: 'POST',
 		  data: $(this).serialize(),
