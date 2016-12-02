@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Mushroom - Dynamic API Builder</title>
+
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Mushroom - Dynamic API Builder</title>
+
+	<!-- Bootstrap -->
+  <link href="/vendor_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+
+
 </head>
 <body>
-	<div class="main-wrapper">
-			{{{body}}}
+	{{> main-nav}}
+	<div class="container">
+		{{{body}}}
 	</div>
 	<script src="/vendor_components/jquery/dist/jquery.min.js"></script>
+	<script src="/vendor_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="/js/functions.js"></script>
 </body>
 </html>

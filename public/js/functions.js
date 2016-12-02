@@ -5,7 +5,7 @@ $(function(){
 	$('#addField').on('click',function(e){
 		e.preventDefault();
 		var field = $('.field:last').clone()
-		field.find('.field-input').val('');
+		field.find('.field-data').val('');
 
 		field.insertAfter('.field:last')
 	})
@@ -22,6 +22,13 @@ $(function(){
 		})
 
 		e.preventDefault();
+	})
+
+	//view resource fields
+	$('.data').on('click',function(e){
+		e.preventDefault();
+		// $('.resources').stop().slideUp('fast');
+		$(this).next().stop().slideToggle('fast');
 	})
 
 

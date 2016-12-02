@@ -1,42 +1,40 @@
-<div class="page">
-	<div class="wrapper">
-	<form id="newEndpoint" method="POST" action="/" enctype="multipart/form-data">
-		<input type="hidden" name="_csrf" value="{{csrfToken}}">
-		<label> Title
-			<input name="title" type="text" >
-		</label>
-		<br/>
-		<label> Endpoint Url
-			<input name="slug" type="text" >
-		</label>
-		<br/>
-		<h4>Resource Fields</h4>
+<div class="page-header">
+	<h1>Create New Endpoints</h1>
+</div>
 
-		<div id="fields">
-			<div class="field">
-				<label> Name
-					<input class="field-input" name="fieldName" type="text" >
-				</label>
-				<label> Type
-					<select name="fieldType">
+<form id="newEndpoint" method="POST" action="/" enctype="multipart/form-data">
+
+	<input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+	<div class="form-group">
+		<label for="title">Title</label>
+			<input class="form-control" name="title" type="text" >
+	</div>
+
+	<div class="form-group">
+		<label>Endpoint Url</label>
+		<input class="form-control" name="slug" type="text" >
+	</div>
+
+	<h4>Resource Fields <button id="addField" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></button></h4>
+
+		<div class="field form-inline panel panel-default">
+			<div class="panel-body">
+				<div class="form-group">
+					<label>Name</label>
+					<input class="form-control field-data" name="fieldName" type="text" >
+				</div>
+
+				<div class="form-group">
+					<label>Type</label>
+					<select class="form-control" name="fieldType">
 						<option value="string">String</option>
 						<option value="boolean">Boolean</option>
 						<option value="number">Number</option>
 					</select>
-				</label>
+				</div>
 			</div>
 		</div>
 
-		<br/>
-		<button id="addField">add</button>
-
-		<br/>
-		<br/>
-		<button type="submit">Create</button>
-	</form>
-	</div>
-</div>
-
-<script>
-
-</script>
+	<button type="submit" class="btn btn-primary">Create</button>
+</form>

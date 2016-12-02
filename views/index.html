@@ -1,42 +1,25 @@
-<div class="page">
-	<div class="wrapper">
-	<form id="newEndpoint" method="POST" action="/" enctype="multipart/form-data">
-		<input type="hidden" name="_csrf" value="{{csrfToken}}">
-		<label> Title
-			<input name="title" type="text" >
-		</label>
-		<br/>
-		<label> Endpoint Url
-			<input name="slug" type="text" >
-		</label>
-		<br/>
-		<h4>Resource Fields</h4>
-
-		<div id="fields">
-			<div class="field">
-				<label> Name
-					<input class="field-input" name="fieldName" type="text" >
-				</label>
-				<label> Type
-					<select name="fieldType">
-						<option value="string">String</option>
-						<option value="boolean">Boolean</option>
-						<option value="number">Number</option>
-					</select>
-				</label>
-			</div>
-		</div>
-
-		<br/>
-		<button id="addField">add</button>
-
-		<br/>
-		<br/>
-		<button type="submit">Create</button>
-	</form>
-	</div>
+<div class="page-header">
+	<h1>List of Endpoints</h1>
 </div>
 
-<script>
+		<div class="row border title">
+			<div class="border-child col-xs-3"><strong>Title</strong></div>
+			<div class="border-child col-xs-3"><strong>URI</strong></div>
+			<div class="border-child col-xs-3"><strong>Status</strong></div>
+			<div class="border-child col-xs-3"><strong>Action</strong></div>
+		</div>
 
-</script>
+		{{#each endpoints}}
+		<div class="row border data {{#if @last}}border-last{{/if}}">
+			<div class="border-child col-xs-3">{{this.title}}</div>
+			<div class="border-child col-xs-3">/api/v1/{{this.slug}}</div>
+			<div class="border-child col-xs-3">running</div>
+			<div class="border-child col-xs-3"></div>
+		</div>
+
+		<div class="row resources {{#if @last}}border-last{{/if}}">
+			<div class="border-child col-xs-12">{{testing}}</div>
+		</div>
+		{{/each}}
+<!-- </div> -->
+

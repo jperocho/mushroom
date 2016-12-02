@@ -1,0 +1,46 @@
+.resources {
+	display: none;
+}
+
+.show-resource-fields {
+	cursor: pointer;
+}
+
+.border.title > .border-child {
+	text-align: center;
+	padding: 10px;
+}
+
+.border {
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+.border-last {
+  border-bottom: 1px solid #eee;
+}
+
+.data:hover {
+	background-color: #eee;
+}
+
+.border-child {
+	padding: 5px 10px;
+	border-right: 1px solid #eee;
+}
+
+.border-child:last-child {
+	border: none;
+}
+
+.resources {
+	padding: 5px 10px;
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+
+.resources:last-child {
+	border-top: none;
+}

@@ -25,6 +25,10 @@ AdminRoute
 
 	})
 
+	.get('/resource', isLoggedIn, csrfProtection, (req, res) => {
+		res.render('endpoint-new', { csrfToken: req.csrfToken() });
+	})
+
 
 
 module.exports = AdminRoute;
